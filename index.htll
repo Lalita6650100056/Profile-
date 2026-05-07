@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lalita Kamwongsa | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffafc;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      color: #ff4f87;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      color: #666;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      padding: 25px 0;
+      background: rgba(255,255,255,0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid #ffe4ec;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ff4f87;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff4f87;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 25px;
+      color: #888;
+    }
+
+    .hero-text p {
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff4f87;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff2d72;
+      transform: translateY(-2px);
+    }
+
+    .hero-image img {
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(255, 79, 135, 0.15);
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fff;
+      border-radius: 40px;
+      padding: 60px;
+      box-shadow: 0 10px 30px rgba(255, 192, 203, 0.12);
+    }
+
+    .about p {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(255, 192, 203, 0.15);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-info {
+      padding: 25px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 10px;
+    }
+
+    /* SKILLS */
+    .skills-container {
+      max-width: 700px;
+      margin: 40px auto 0;
+    }
+
+    .skill {
+      margin-bottom: 25px;
+    }
+
+    .skill-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: #ffe3ec;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(to right, #ff8fb1, #ff4f87);
+      border-radius: 30px;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: white;
+      border-radius: 40px;
+      padding: 60px 20px;
+      box-shadow: 0 10px 30px rgba(255, 192, 203, 0.12);
+    }
+
+    .contact-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-links a {
+      padding: 14px 24px;
+      border: 1px solid #ffd1df;
+      border-radius: 50px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover {
+      background: #ff4f87;
+      color: white;
+      border-color: #ff4f87;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+
+      .nav-links {
+        gap: 15px;
+        font-size: 0.9rem;
+      }
+
+      .about {
+        padding: 40px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Lalita.</div>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <h1>Lalita Kamwongsa</h1>
+
+        <h3>Marketing student passionate about brand storytelling</h3>
+
+        <p>
+          Third-year logistics student with creativity, communication skills,
+          and a passion for modern branding and digital content creation.
+        </p>
+
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/500x600.png?text=Your+Photo" alt="Profile Placeholder">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about">
+        <h2>About Me</h2>
+
+        <p>
+          Hello! I’m Lalita, a third-year logistics student who enjoys combining
+          creativity with strategic thinking. I’m passionate about storytelling,
+          branding, and creating meaningful digital experiences that connect
+          with people.
+        </p>
+
+        <p>
+          During my studies, I’ve explored marketing communication, content
+          creation, and project management while developing skills in teamwork,
+          problem-solving, and presentation design.
+        </p>
+
+        <p>
+          I believe great design and strong communication can turn ideas into
+          impactful experiences. My goal is to continue growing in creative
+          marketing, branding, and digital media.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250.png?text=Project+1" alt="">
+
+          <div class="project-info">
+            <h3>Brand Campaign Concept</h3>
+            <p>
+              Developed a minimalist branding concept and social media campaign
+              for a lifestyle product targeting Gen Z consumers.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250.png?text=Project+2" alt="">
+
+          <div class="project-info">
+            <h3>Logistics Research Project</h3>
+            <p>
+              Conducted a research presentation on supply chain optimization and
+              warehouse management efficiency.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="https://via.placeholder.com/400x250.png?text=Project+3" alt="">
+
+          <div class="project-info">
+            <h3>Creative Content Design</h3>
+            <p>
+              Designed promotional content and short-form social media visuals
+              using modern minimalist aesthetics.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+
+      <h2>Skills</h2>
+
+      <div class="skills-container">
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Content Creation</span>
+            <span>90%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Branding</span>
+            <span>85%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Communication</span>
+            <span>88%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 88%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Presentation Design</span>
+            <span>80%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Project Management</span>
+            <span>75%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 75%;"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <div class="skill-header">
+            <span>Social Media Marketing</span>
+            <span>92%</span>
+          </div>
+
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 92%;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact">
+        <h2>Contact Me</h2>
+
+        <p>
+          Feel free to connect with me for collaborations,
+          internships, or creative projects.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:lalita@example.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Lalita Kamwongsa. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
